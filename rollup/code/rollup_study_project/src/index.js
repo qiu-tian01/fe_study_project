@@ -4,3 +4,14 @@
  * @Description: Do not edit
  * @params: Do not edit
  */
+
+import a from "./components/a";
+import b from "./components/b";
+
+
+function test() {
+    console.log('hello world')
+}
+
+a()
+test()

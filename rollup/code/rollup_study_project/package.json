@@ -5,5 +5,8 @@
   "license": "MIT",
   "dependencies": {
     "rollup": "^2.56.3"
+  },
+  "scripts": {
+    "build" : "rollup -c"
   }
 }
