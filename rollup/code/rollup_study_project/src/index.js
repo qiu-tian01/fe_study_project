@@ -8,11 +8,15 @@
 import a from "./components/a.js";
 import b from "./components/b.js";
 import tsTest from './components/c.ts'
+import "./css/index.css"
+import image from './imgs/images.png'
 
 
 function test() {
     let a = 'a'
     console.log('hello world', `hello ${a}`)
+    console.log('hello world', `hello ${a}`)
+    console.log(`img`,image)
 }
 
 export class Test {

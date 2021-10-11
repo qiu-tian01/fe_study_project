@@ -7,9 +7,13 @@
 
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import babel from '@rollup/plugin-babel'
-import typeScript from '@rollup/plugin-typescript'
-import html from '@rollup/plugin-html'
+import babel from '@rollup/plugin-babel';
+import typeScript from '@rollup/plugin-typescript';
+import html from '@rollup/plugin-html';
+import postcss from 'rollup-plugin-postcss';
+import image from '@rollup/plugin-image'
+import { terser } from 'rollup-plugin-terser'
+
 
 export default {
     input: 'src/index.js',
@@ -22,6 +26,7 @@ export default {
     plugins: [
       typeScript,
       html(),
+      postcss(),
       resolve(),
       commonjs(),
       babel({
@@ -33,6 +38,8 @@ export default {
           '@babel/preset-typescript'
         ]
       }),
+      image()
+      // terser()
     ]
     
   };

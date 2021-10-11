@@ -1,0 +1,10 @@
+.test {
+    width : 100px;
+    height: 100px;
+    background: url(../imgs/images.png);
+}
+
+.test .title {
+    font-size: 20px;
+    color: #000;
+}
