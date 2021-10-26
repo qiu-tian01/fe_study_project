@@ -67,7 +67,9 @@ var img = "data:image/png;base64,UklGRtwMAQBXRUJQVlA4INAMAQBQNAOdASr0AXcDPpE8mUk
 function test() {
   var a = 'a';
   console.log('hello world', "hello ".concat(a));
+  console.log('hello world', "hello ".concat(a));
   console.log("img", img);
+  console.log('test');
 }
 
 var Test = /*#__PURE__*/function () {

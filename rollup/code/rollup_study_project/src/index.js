@@ -16,7 +16,8 @@ function test() {
     let a = 'a'
     console.log('hello world', `hello ${a}`)
     console.log('hello world', `hello ${a}`)
-    console.log(`img`,image)
+    console.log(`img`, image)
+    console.log('test')
 }
 
 export class Test {

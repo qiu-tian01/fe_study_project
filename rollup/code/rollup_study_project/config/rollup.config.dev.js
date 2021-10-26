@@ -14,39 +14,41 @@ import image from '@rollup/plugin-image'
 // import { terser } from 'rollup-plugin-terser'
 import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
+import removeConsole from '../plugins/rollup-plugin-example.js'
 
 
 export default {
-    input: 'src/index.js',
-    output: {
-      file: 'dist/bundle.js',
-      format: 'esm',
-      sourcemap : true
-    },
+  input: 'src/index.js',
+  output: {
+    file: 'dist/bundle.js',
+    format: 'esm',
+    sourcemap: true
+  },
 
-    plugins: [
-      typeScript,
-      html(),
-      postcss(),
-      resolve(),
-      commonjs(),
-      babel({
-        babelHelpers: 'bundled',
-        exclude:'node_modules/**',
-        extensions: ['.ts', '.js'],
-        presets: [
-          '@babel/preset-env',
-          '@babel/preset-typescript'
-        ]
-      }),
-      image(),
+  plugins: [
+    typeScript,
+    html(),
+    postcss(),
+    resolve(),
+    commonjs(),
+    babel({
+      babelHelpers: 'bundled',
+      exclude: 'node_modules/**',
+      extensions: ['.ts', '.js'],
+      presets: [
+        '@babel/preset-env',
+        '@babel/preset-typescript'
+      ]
+    }),
+    image(),
     //   terser()
     livereload(),
+    removeConsole(),
     serve({
-        open : true,
-        port : 8888,
-        contentBase: '',
+      open: true,
+      port: 8888,
+      contentBase: '',
     })
-    ]
-    
-  };
+  ]
+
+};
