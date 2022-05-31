@@ -1,0 +1,88 @@
+<!--
+ * @author: qiutian
+ * @Date: 2022-05-27 17:12:14
+ * @Description: Do not edit
+ * @params: Do not edit
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    新增类型 :
+    <form action="">
+        <div>
+            email:<input type="email">
+        </div>
+        <div>
+            url: <input type="url">
+        </div>
+        <div>
+            range: <input type="range">
+        </div>
+        <div>
+            number:<input type="number">
+        </div>
+        <div>
+            search:<input type="search">
+        </div>
+        <div>
+            color:<input type="color">
+        </div>
+        <div>
+            time:<input type="time">
+        </div>
+        <div>
+            month:<input type="month">
+        </div>
+        <div>
+            week:<input type="week">
+        </div>
+        <div>
+            date: <input type="date">
+        </div>
+        <div>
+            datetime-local:<input type="datetime-local">
+        </div>
+
+        <button type="submit">提交</button>
+    </form>
+    新增属性：
+    <form action="">
+
+        <div>
+            required: <input type="text" required="required">
+        </div>
+        <div>
+            <input id="ran" type="range" min="0" max="200" />
+        </div>
+        <div>
+            placeholder : <input type="text" placeholder="输入内容">
+        </div>
+        <div>
+            autofocus : <input type="text" autofocus>
+        </div>
+        <div>
+            pattern : <input type="text" pattern="[0-9]{5}">
+        </div>
+        <button form-type="submit">提交</button>
+        <button form-type="reset">重置</button>
+    </form>
+    url的使用:
+    <form action="">
+        <label>请输入搜索引擎</label>
+        <input id="txt" type="url" list="user_list" />
+        <datalist id="user_list">
+            <option value="http://www.baidu.com" label="百度"></option>
+            <option value="http://www.biying.com" label="必应"></option>
+            <option value="http://www.google.com" label="google"></option>
+        </datalist>
+    </form>
+</body>
+
+</html>
