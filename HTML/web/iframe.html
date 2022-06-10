@@ -1,0 +1,54 @@
+<!--
+ * @author: qiutian
+ * @Date: 2022-05-31 11:07:36
+ * @Description: iframe demo
+ * @params: Do not edit
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iframe</title>
+    <script>
+        window.parentTest = 'this parent'
+
+        function parentFun() {
+            console.log(`hello son`)
+        }
+
+        function getSonFun() {
+            const ifrmae = document.querySelector('#iframeExample')
+            console.log(`ifrmae`, ifrmae.contentWindow.son_val)
+            ifrmae.contentWindow.sonFun('hello son func')
+        }
+
+        function load() {
+            console.log('加载。。。');
+            // 自适应子窗口的宽高
+            var scrollHeight = document.getElementById('iframeExample').contentWindow.document.body.scrollHeight;
+            var scrollWidth = document.getElementById('iframeExample').contentWindow.document.body.scrollWidth;
+
+            document.getElementById('iframeExample').width = scrollWidth;
+            document.getElementById('iframeExample').height = scrollHeight;
+            console.log(document.readyState); // Interactive. 可以接收到部分响应数据,网上说这个状态时，数据是只读的，但是我修改了数据，发现也是生效的
+        }
+    </script>
+</head>
+
+<body>
+    iframe :
+    <iframe id="iframeExample" src="./iframe_son.html" title="iframe Example" name="iframeExample" frameborder="0" onload="load()">
+
+        <p>Your browser does not support iframes.</p>
+    </iframe>
+    <div>
+        <p>iframe非跨域通信通信</p>
+        <P>父页面调用子页面方法和元素:</P>
+        <button onclick="getSonFun()">获取子元素方法和变量</button>
+    </div>
+
+</body>
+
+</html>

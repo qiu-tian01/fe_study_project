@@ -99,7 +99,5 @@ input , img
 
 ### 4. iframe
 
-iframe 是HTML的一个标签，默认存在宽高，存在边界，是一个行内块元素，可以通过display更改。**每个iframe里维护一套自己的window对象。只有同域才能进行`iframe`之间的读改写，跨域时，只能进行简单的路由跳转**。
-
 详见： [iframe笔记](./iframe.md)
 

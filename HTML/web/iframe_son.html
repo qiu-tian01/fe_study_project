@@ -1,0 +1,83 @@
+<!--
+ * @author: qiutian
+ * @Date: 2022-06-05 14:41:42
+ * @Description: Do not edit
+ * @params: Do not edit
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100px;
+        height: 200px;
+    }
+</style>
+
+<script type="text/javascript">
+    window.son_val = 'this son'
+
+    function loadSon() {}
+
+    function sonFun(data) {
+        console.log(data);
+    }
+    // var list_son = new Array();
+    // list_son.push("曹操");
+    // list_son.push("司马懿");
+
+    // function son_fun() {
+    //     return list_son;
+    // }
+
+    function getParentVar() {
+        // alert("getParentVar");
+        console.log(window.parent.parentTest);
+    }
+
+    function getParentFun() {
+        window.parent.parentFun()
+    }
+
+    // function load_son() {
+    //     let url = location.search; //获取url中"?"符后的字串
+    //     if (url.length > 0) { //判断是否携带参数
+    //         let params = {};
+    //         if (url.indexOf('?') != -1) {
+    //             this.isShwoInput = true;
+    //             let str = url.substr(url.indexOf('?') + 1);
+    //             let strs = str.split('&');
+    //             for (let i = 0; i < strs.length; i++) {
+    //                 params[strs[i].split('=')[0]] = decodeURI(strs[i].split('=')[1]);
+    //             }
+    //         }
+    //         // return params;
+    //         console.log(params);
+    //     }
+    // }
+
+    // window.addEventListener("message", function(event) {
+    //     var data = event.data;
+
+    //     console.log("son --- 监听到父窗口的变量的变化" + JSON.stringify(data));
+    // });
+</script>
+<!--<body>-->
+
+<body onload="loadSon()">
+    <div id="sonid" style="background: green;">
+        <button id="getVar" type="button" onclick="getParentVar()">获取父窗口变量</button>
+        <button id="getFun" type="button" onclick="getParentFun()">获取父窗口方法</button>
+        <br>
+    </div>
+</body>
+
+</html>
