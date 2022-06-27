@@ -1,0 +1,29 @@
+<!--
+ * @author: qiutian
+ * @Date: 2022-06-27 14:50:04
+ * @Description: Do not edit
+ * @params: Do not edit
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>111</div>
+    <script>
+        const indexDB = window.indexedDB.open('test', 1)
+        indexDB.onerror = function(e) {
+            console.log(`打开indexDB 数据库失败`, e, indexDB.result)
+        }
+        indexDB.onsuccess = function(e) {
+            console.log(`打开indexDB 数据库成功`, e, indexDB.result)
+        }
+    </script>
+</body>
+
+</html>

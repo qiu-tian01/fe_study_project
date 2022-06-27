@@ -39,7 +39,7 @@ localStorage.clear();
 ##### 特点
 
 - 保存的数据长期存在，下一次访问该网站的时候，网页可以直接读取以前保存的数据。
-- 大小为 5M 左右
+- 大小为PC 5M 左右，移动端2.5M左右
 - 仅在客户端使用，不和服务端进行通信
 
 #### sessionStorage
@@ -82,7 +82,7 @@ sessionStorage.clear();
 ##### 特点
 
 - 会话级别的浏览器存储
-- 大小为5M左右
+- 大小PC为5M左右，移动端为2.5M左右
 - 仅在客户端使用，不和服务端进行通信
 
 
@@ -167,4 +167,5 @@ function getCookie(key) {
 
 
 
-
+#### IndexDB
+[indexDB](./indexDB.md)
