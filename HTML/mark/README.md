@@ -95,9 +95,12 @@ input , img
 | <input type="text" pattern="[0-9]{5}">     | pattern将属性值设为某个格式的正则表达式                      |
 | novalidate                                 | form表单中取消验证，如即使添加required也可不填               |
 
-
-
 ### 4. iframe
 
 详见： [iframe笔记](./iframe.md)
+
+### 5. 新增存储方法
+详见： [存储笔记](./storage.md)
+
+
 

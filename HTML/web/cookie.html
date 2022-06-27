@@ -1,0 +1,83 @@
+<!--
+ * @author: qiutian
+ * @Date: 2022-06-23 22:55:55
+ * @Description: Do not edit
+ * @params: Do not edit
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <button class="btn1">点击存储cookie</button>
+    <button class="btn2">点击修改cookie</button>
+    <button class="btn3">点击修改cookie</button>
+    <button class="btn4">点击删除cookie</button>
+    <button class="btn5">点击清理cookie</button>
+    <script>
+        const btn1 = document.querySelector('.btn1')
+        const btn2 = document.querySelector('.btn2')
+        const btn3 = document.querySelector('.btn3')
+        const btn4 = document.querySelector('.btn4')
+        const btn5 = document.querySelector('.btn5')
+        btn1.onclick = function() {
+            setCookie('test', 1)
+        }
+
+        btn2.onclick = function() {
+            setCookie('test', 2)
+        }
+
+        btn3.onclick = function() {
+            setCookie('test2', 2)
+            const result = getCookie('test')
+            console.log(`result`, result)
+        }
+
+        btn4.onclick = function() {
+            const result = removeCookie('test')
+        }
+
+        btn5.onclick = function() {
+            const result = clearCookie()
+        }
+
+        function setCookie(key, value, time = -1, path) {
+            document.cookie = `${key}=${value};Expires=${time}`
+        }
+
+        function getCookie(key) {
+            const cookie = document.cookie.split(';')
+            for (let i = 0; i < cookie.length; i++) {
+                const c = cookie[i].trim();
+                if (c.indexOf(`${key}=`) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function removeCookie(key) {
+            setCookie(key, "", -1);
+        }
+
+        function clearCookie() {
+            const cookie = document.cookie.split(';')
+            for (let i = 0; i < cookie.length; i++) {
+                const key = cookie[i].trim().split("=")[0];
+                console.log(key)
+                setCookie(key, "", -1);
+            }
+            console.log(document.cookie)
+        }
+    </script>
+
+</body>
+
+</html>
