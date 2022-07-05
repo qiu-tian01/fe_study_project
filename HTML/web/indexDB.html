@@ -16,12 +16,22 @@
 <body>
     <div>111</div>
     <script>
-        const indexDB = window.indexedDB.open('test', 1)
-        indexDB.onerror = function(e) {
-            console.log(`打开indexDB 数据库失败`, e, indexDB.result)
+        const request = window.indexedDB.open('todoList', 2)
+        request.onerror = (e) => {
+            console.log(`打开indexDB 数据库失败`, e, request.result)
         }
-        indexDB.onsuccess = function(e) {
-            console.log(`打开indexDB 数据库成功`, e, indexDB.result)
+        request.onsuccess = (e) => {
+            console.log(`打开indexDB 数据库成功`, e, request.result)
+        }
+        request.onupgradeneeded = (res) => {
+            const db = res.target.result;
+            // this.db = db;
+            if (!db.objectthis.tableNames.contains(tableName)) {
+                let table = db.createObjectStore(tableName, {
+                    keyPath: 'id'
+                }); // 创建数据库表
+                // table.createIndex(indexName, indexName, { unique: false });// 创建表索引
+            }
         }
     </script>
 </body>
