@@ -46,7 +46,6 @@
     typeof null // 'object'
     ```
     
-  
   - instanceof 判断引用类型
   
     ```
@@ -86,7 +85,7 @@
   
 - 数据类型转换
 
-  - 强制类型转换，分别为Number(),String(),Boolean()
+  - **强制类型转换**，分别为Number(),String(),Boolean()
 
     - Number()
 
@@ -122,5 +121,93 @@
     parseFloat('qqq') // NaN
     ```
 
-    - https://juejin.cn/post/6961982923180523550
+    - String()
+    
+    ```
+    String({a:1}) // [object Object]
+    String([1,2,3]) // '1,2,3'
+    String(true) // 'true'
+    String(1) //'1'
+    String(Symbol()) // 'Symbol()'
+    String(undefined) // 'undefind'
+    String(null) // 'null'
+    ```
+    
+    - Boolean()
+    
+    除了 undefind ,Null , 0 (+0与-0)，NaN, ''(空字符串)会转化为false，其余都会转化为true
+    
+    ```
+    Boolean(undefined) //false
+    Boolean(NaN) //false
+    Boolean(0) //false
+    Boolean('') //false
+    Boolean(null) // false
+    Boolean({}) // true
+    Boolean([]) // true
+    Boolean(function(){}) // true
+    ```
+    
+  - **隐式类型转换**
+  
+    1. 当进行减法，乘法，除法运算时，会先将**非Number**类型值转化为**Number** 类型值再进行运算
+  
+    ```
+    1-'a' // NaN 'a'转换成了NaN
+    1-true // 0 true转换成了1
+    1-false // 1 false转换成了0
+    1-undefind //NaN undefind 转换为了NaN
+    1-['1'] //0 ['1']先转换成'1'，'1'再转换成了1
+    1-{a:1} // NaN
+    1-Symbol() // 会报错，TypeError: Cannot convert a Symbol value to a number
+    ```
+  
+    2. 进行加法运算时
+       - 一侧有**string**类型时，会按字符串拼接规则，将另一侧转换为**string**类型
+       - 一侧有**number**类型时，一侧为**非string**类型的原始类型时，将另一侧转换为number类型
+       - 一侧有**nunmber**了类型，一侧为**引用类型**类型时，会将两侧变为**string**类型后走字符串拼接规则
+  
+    **注意：**
+  
+    如果在**浏览器**中输入{}+[]就会为0，而[]+{}则返回'[object Object]' ,这个是为什么呢？
+  
+    原因是:
+  
+    - {}+[]其实是被解读为:空代码块+[]。或者这样写{};+[]。空代码块不被执行，只执行了+[]。被转换成了0，所以最后结果为0
+  
+    - []+{}这里{}不会被理解为空代码块，而是被理解为空对象。所以被转换成了字符串形式的'[object Object]'
+  
+    ```
+    'a'+1 // 'a1' 
+    'a'+null //'anull'
+    1+null //1 将null转换为0再进行运算
+    1+true //2 将true转换为1再进行运算
+    1+{} //'1[object Object]' 将{}转换为string类型的[object Object]
+    {}+[] //0
+    []+{} //[object Object]
+    ```
+  
+    3. 进行一元运算符运算,会转换为数值
+  
+    ```
+    +'1'//1
+    +true //1
+    let s = undefind
+    +s //NaN
+    +{} //NaN
+    +[] //0
+    ```
+  
+    4. == 比较中的隐式转换
+  
+    - NaN 和任何类型（包括它自己）比较永远返回false
+    - `Boolean` 和其他任何类型比较，`Boolean` 首先被转换为 `Number` 类型：
+    - `String`和`Number`比较，先将`String`转换为`Number`类型：
+    - `null == undefined`比较结果是`true`，除此之外，`null`、`undefined`和其他任何结果的比较值都为`false`。
+    - `原始类型`和`引用类型`做比较时，引用类型会依照`ToPrimitive`规则转换为原始类型，如果还是没法得到一个原始类型，就会抛出 `TypeError`。
+  
+    `ToPrimitive`规则，是引用类型向原始类型转变的规则，它遵循先`valueOf`后`toString`的模式期望得到一个原始类型。
+  
+
+​	**参考：**https://juejin.cn/post/6961982923180523550
 
