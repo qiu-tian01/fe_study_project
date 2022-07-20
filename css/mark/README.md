@@ -1,9 +1,5 @@
-<!--
- * @author: qiutian
- * @Date: 2022-07-11 10:52:16
- * @Description: Do not edit
- * @params: Do not edit
--->
+
+
 ### 1. css引入方法与优先级
 
 css引入方式有 内联引入，内嵌引入，外链引入。同权重情况下 ，内联样式表（标签内部）> 嵌入样式表（当前文件中）> 外部样式表（外部文件中）
