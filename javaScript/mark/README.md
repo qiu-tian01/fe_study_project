@@ -1,9 +1,3 @@
-<!--
- * @author: qiutian
- * @Date: 2022-07-08 10:30:09
- * @Description: Do not edit
- * @params: Do not edit
--->
 ### 1. javaScript数据类型
 
 [数据类型](./数据类型.md)
@@ -19,8 +13,25 @@
 [继承](./面向对象编程/继承.md)
 
 ### 5. this指向
+[this指向](./面向对象编程/this指向.md)
 
 ### 6. new 关键字
+[new 关键字](./面向对象编程/new.md)
+
+### 7. 闭包
+[闭包](./面向对象编程/闭包.md)
+
+### 8. 执行上下文&执行栈&eventLoop
+
+### 9. 正则表达式
+
+
+
+
+
+
+
+
 
 
 
