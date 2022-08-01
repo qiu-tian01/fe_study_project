@@ -22,9 +22,10 @@
 [闭包](./面向对象编程/闭包.md)
 
 ### 8. 执行上下文&执行栈&eventLoop
+[eventLoop](./eventLoop.md)
 
 ### 9. 正则表达式
-
+[正则表达式](./正则表达式/README.md)
 
 
 
