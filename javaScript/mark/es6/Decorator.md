@@ -1,0 +1,1 @@
+装饰器是一种函数，装饰器（Decorator）用来增强 JavaScript 类（class）的功能。
