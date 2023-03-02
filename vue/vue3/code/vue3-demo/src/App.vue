@@ -9,16 +9,18 @@
   <router-link to="/about">About</router-link>
 
   <div> 切换的tab：{{tab}} </div>
-  <router-view></router-view>
+  <router-view key="1"></router-view>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { useStore } from '@/store/store'
 
   let tab = ref('index')
   const router = useRouter()
+  const store = useStore()
 
   const changeTab = (prop:string)=>{
     tab.value = prop
